@@ -1,0 +1,145 @@
+<html>
+
+<head>
+    <title>足迹/行万里路</title>
+    <link rel="shortcut icon" type=image/png href="img/icon.png">
+    <!--引入jQuery框架-->
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <!--引入jVectorMap库-->
+    <script type="text/javascript" src="js/jquery-jvectormap-1.2.2.min.js"></script>
+    <!--引入样式表-->
+    <link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet" media="screen">
+
+
+    <!--引入中国地图数据库-->
+    <script type="text/javascript" src="js/jquery-jvectormap-cn-merc-en.js"></script>
+
+    <!--引入美国地图数据库-->
+    <!--script type="text/javascript" src="js/jquery-jvectormap-us-aea.js"></script-->
+    <!--引入世界地图数据库-->
+    <!--script type="text/javascript" src="js/jquery-jvectormap-world-mill.js"></script-->
+
+</head>
+
+<body>
+    <script>
+        window.alert("在路上，不为旅行，不因某人，只为在未知的途中遇见未知的自己 !")
+    </script>
+
+
+
+    <!--background-color: 地图背景颜色-->
+    <div id="map" style="background-color:#353535"> </div>
+    <script>
+        $('#map').vectorMap({
+
+            // 此处更改地图
+            map: 'cn_merc_en', // 中国地图
+            //map: 'us-aea',     // 美国地图
+            //map: 'world-mill', // 世界地图
+
+
+            backgroundColor: 'transparent',
+            zoomMin: 0.5, // 鼠标缩放时的最小比例
+            zoomMax: 4, // 鼠标缩放时的最大比例
+            focusOn: {
+                x: 0.55,
+                y: 2,
+                scale: 0.9
+            },
+            regionStyle: {
+                initial: {
+                    fill: '#e5e5e5', // 地图颜色
+                    "fill-opacity": 1, // 省份（州）是否隐藏，鼠标滑动时显示; 1：显示，2：隐藏。
+                    stroke: 'none',
+                    "stroke-width": 0,
+                    "stroke-opacity": 1
+                },
+                hover: {
+                    fill: '#ccc', // 鼠标滑动至某省份的高亮颜色。
+                    "fill-opacity": 0.5
+                },
+                selected: {
+                    fill: 'yellow'
+                },
+                selectedHover: {}
+            },
+            markerStyle: {
+                initial: {
+                    fill: '#fd6666', // 足迹位置的填充颜色
+                    stroke: '#ff0033' // 足迹位置的描边颜色
+                },
+                hover: {
+                    fill: '#fd2020', // 鼠标滑动至足迹位置后的填充颜色
+                    stroke: '#fff', // 鼠标滑动至足迹位置后的描边颜色
+                    "fill-opacity": 0.8
+                },
+            },
+            markers: [ // 足迹位置
+                // {latLng: [经度（保留两位小数）, 纬度（保留两位小数）], name: '城市名称'},
+                {
+                    latLng: [31.24, 121.50],
+                    name: '上海'
+                }, {
+                    latLng: [32.04, 118.76],
+                    name: '南京'
+                }, {
+                    latLng: [31.29, 120.61],
+                    name: '苏州'
+                }, {
+                    latLng: [31.77, 119.94],
+                    name: '常州'
+                }, {
+                    latLng: [23.02, 113.12],
+                    name: '佛山'
+                }, {
+                    latLng: [23.12, 113.28],
+                    name: '广州'
+                }, {
+                    latLng: [37.50, 122.11],
+                    name: '威海'
+                }, {
+                    latLng: [35.42, 119.46],
+                    name: '日照'
+                }, {
+                    latLng: [35.06, 118.32],
+                    name: '临沂'
+                }, {
+                    latLng: [34.26, 117.18],
+                    name: '徐州'
+                }, {
+                    latLng: [32.20, 119.45],
+                    name: '镇江'
+                }, {
+                    latLng: [33.94, 118.29],
+                    name: '宿迁'
+                }, {
+                    latLng: [34.60, 119.17],
+                    name: '连云港'
+                }, {
+                    latLng: [33.59, 119.02],
+                    name: '淮安'
+                }, {
+                    latLng: [31.32, 118.37],
+                    name: '芜湖'
+                }, {
+                    latLng: [32.89, 115.81],
+                    name: '阜阳'
+                }, {
+                    latLng: [26.07, 119.30],
+                    name: '福州'
+                }, {
+                    latLng: [, ],
+                    name: ''
+                }, {
+                    latLng: [, ],
+                    name: ''
+                }, {
+                    latLng: [, ],
+                    name: ''
+                },
+            ]
+        });
+    </script>
+
+</html>
